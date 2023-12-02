@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPFProjectOne.AddEditCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProjectOne"
+        mc:Ignorable="d"
+        Title="AddEditCustomer" Height="450" Width="750" FontSize="24">
+    <Grid>
+        <StackPanel Margin="10">
+            <DockPanel Margin="10">
+                <Label Margin="5">FirstName : </Label>
+                <TextBox Name="tbFirstName" Width="500" HorizontalAlignment="Right"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="10">
+                <Label Margin="5">LastName :</Label>
+                <TextBox Name="tbLastName" Width="500" HorizontalAlignment="Right"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="10">
+                <Label Margin="5">PhoneNumber :</Label>
+                <TextBox Name="tbPhoneNumber" Width="500" HorizontalAlignment="Right"></TextBox>
+            </DockPanel>
+            <DockPanel Margin="10">
+                <Label Margin="5">Address :</Label>
+                <TextBox Name="tbAddress" Width="500" HorizontalAlignment="Right"></TextBox>
+            </DockPanel>
+            <Label Margin="2" Name="lblError" Foreground="Red"></Label>
+            <DockPanel Margin="10" HorizontalAlignment="Right">
+                <Button Click="btnCancell_Click" Margin="10" Name="btnCancell" Foreground="White" Background="Red" Width="100" Height="45" Cursor="Hand">Cancell</Button>
+                <Button Click="btnSubmit_Click" Margin="10" Name="btnSubmit" Foreground="White" Background="LightGreen" Width="100" Height="45" Cursor="Hand">OK</Button>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

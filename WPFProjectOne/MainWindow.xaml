@@ -1,0 +1,102 @@
+﻿<Window x:Class="WPFProjectOne.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProjectOne"
+        mc:Ignorable="d"
+        Title="HEllo word" Height="720" Width="1200" HorizontalAlignment="Center">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Margin="2" Background="WhiteSmoke" Width="250" HorizontalAlignment="Center" BorderThickness="2" BorderBrush="Gray">
+            <StackPanel>
+                <Button Margin="20,30" Background="#3e454c" Height="50" Foreground="White" FontSize="22" Name="btnHome" Click="btnHome_Click">Home</Button>
+                <Button Margin="20,30" Background="#3e454c" Height="50" Foreground="White" FontSize="22" Name="btnEmploees" Click="btnEmploees_Click">Emploees</Button>
+                <Button Margin="20,30" Background="#3e454c" Height="50" Foreground="White" FontSize="22" Name="btnCustomers" Click="btnCustomers_Click">Customres</Button>
+                <Button Margin="20,30" Background="#3e454c" Height="50" Foreground="White" FontSize="22" Name="btnProducts" Click="btnProducts_Click" >Products</Button>
+                <Image Margin="10,40" Height="150" Width="150" Source="/icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill"/>
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Column="1" Margin="2" Background="Black" Name="HomePanel" Visibility="Visible" BorderThickness="2" BorderBrush="Gray">
+            <StackPanel HorizontalAlignment="Stretch">
+                <Label FontSize="54" FontWeight="Heavy" HorizontalAlignment="Center" FontFamily="B nazanin" Margin="0,15" Foreground="White">Welecometo my application</Label>
+                <Image Source="/Back.jpg" Stretch="Fill" />
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="2" Margin="2" Background="White" Visibility="Collapsed" Name="EmploesePanel"  BorderThickness="2" BorderBrush="Gray">
+            <StackPanel HorizontalAlignment="Stretch" Background="#efa82d" Margin="10">
+                <DataGrid Margin="5" Name="EmployeeGrid" ColumnWidth="*" CanUserAddRows="False" MinColumnWidth="100" CanUserResizeColumns="True" SelectedCellsChanged="EmployeeGrid_SelectedCellsChanged">
+                    
+                </DataGrid>
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <WrapPanel Margin="5" Grid.Row="0">
+                        <Label Margin="2" FontWeight="Bold" >Detailed Info</Label>
+                        <Label Margin="2" Content="---" Name="EmployeeLable"></Label>
+                    </WrapPanel>
+                    <DockPanel HorizontalAlignment="Center" Margin="20" Grid.Row="1">
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnAddEmployee" Click="btnAddEmployee_Click">Add Employee</Button>
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnEditEmployee" Click="btnEditEmployee_Click" >Edit</Button>
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnDeleteEmployee" Click="btnDeleteEmployee_Click">Delete</Button>
+                    </DockPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="3" Margin="2" Background="White" Visibility="Collapsed" Name="CustomersPanel"  BorderThickness="2" BorderBrush="Gray">
+            <StackPanel HorizontalAlignment="Stretch" Background="#EFA82D" Margin="10">
+                <DataGrid Margin="5" Name="CustomerGrid" ColumnWidth="*" CanUserAddRows="False" MinColumnWidth="100" CanUserResizeColumns="True" SelectedCellsChanged="CustomerGrid_SelectedCellsChanged">
+                    
+                </DataGrid>
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <WrapPanel Margin="5" Grid.Row="0">
+                        <Label Margin="2" FontWeight="Bold" >Detailed Info</Label>
+                        <Label Margin="2" Content="---" Name="CustomerLable"></Label>
+                    </WrapPanel>
+                    <DockPanel HorizontalAlignment="Center" Margin="20" Grid.Row="1">
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnAddCustomer" Click="btnAddCustomer_Click">Add Customer</Button>
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnEditCustomer" Click="btnEditCustomer_Click">Edit Customer</Button>
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnDeleteCustomer" Click="btnDeleteCustomer_Click">Delete Customer</Button>
+                    </DockPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="4" Margin="2" Background="White" Visibility="Collapsed" Name="ProductsPanel"  BorderThickness="2" BorderBrush="Gray">
+            <StackPanel HorizontalAlignment="Stretch" Background="#EFA82D" Margin="10">
+                <DataGrid Margin="5" Name="ProductGrid" ColumnWidth="*" CanUserAddRows="False" MinColumnWidth="100" CanUserResizeColumns="True" SelectedCellsChanged="ProductGrid_SelectedCellsChanged">
+
+                </DataGrid>
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <WrapPanel Margin="5" Grid.Row="0">
+                        <Label Margin="2" FontWeight="Bold" >Detailed Info</Label>
+                        <Label Margin="2" Content="---" Name="ProductLable"></Label>
+                    </WrapPanel>
+                    <DockPanel HorizontalAlignment="Center" Margin="20" Grid.Row="1">
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnAddProduct" Click="btnAddProduct_Click">Add Product</Button>
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnEditProduct" Click="btnEditProduct_Click">Edit Product</Button>
+                        <Button Margin="10" Height="50" Width="150" Background="LightGreen" Name="btnDeleteProduct" Click="btnDeleteProduct_Click">Delete Product</Button>
+                    </DockPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
